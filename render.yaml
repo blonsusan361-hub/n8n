@@ -11,8 +11,5 @@ services:
         value: 5678
       - key: N8N_PROTOCOL
         value: https
-      - key: NODE_ENV
-        value: production
-      - key: GENERIC_TIMEZONE
-        value: Asia/Kathmandu
-    autoDeploy: true
+    buildCommand: ""
+    startCommand: ""
