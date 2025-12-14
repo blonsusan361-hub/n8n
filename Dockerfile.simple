@@ -1,0 +1,16 @@
+FROM node:18-alpine
+
+WORKDIR /usr/src/app
+
+# Install n8n
+RUN npm install -g n8n
+
+# Create non-root user
+RUN addgroup -g 1000 -S n8n && \
+    adduser -u 1000 -S n8n -G n8n
+
+# Switch to non-root user
+USER n8n
+
+# Run n8n
+CMD ["n8n", "start"]
